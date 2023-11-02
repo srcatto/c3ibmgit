@@ -1,0 +1,18 @@
+small_img = zipfile.ZipFile('readonly/small_img.zip')
+
+data_structure[small_img.infolist()[0].filename] = [Image.open(small_img.open(small_img.infolist()[0].filename)), pytesseract.image_to_string(Image.open(small_img.open(small_img.infolist()[0].filename))), face_cascade.detectMultiScale(cv.cvtColor(cv.imread(small_img.extract(small_img.infolist()[0].filename)), cv.COLOR_BGR2GRAY)).tolist()]
+
+
+
+name = 'Christopher'
+if name in data_structure[small_img.infolist()[0].filename][1]:
+    print('Results found in file a-0.png')
+    for face in data_structure[small_img.infolist()[0].filename][2]:
+        face_tuples = tuple(face)
+        #print(face_tuples)
+        display(data_structure[small_img.infolist()[0].filename][0].crop((face_tuples)))
+
+else:
+    print('False')
+
+
